@@ -6,6 +6,8 @@ deploy1:
     - apk update
     - apk add openssh
     - mkdir ~/.ssh
+    - chmod 0700 ~/.ssh
     - ssh-keyscan -p $SSH_PORT $BOT_HOST > ~/.ssh/known_hosts
     - echo $SSH_KEY_DEBOTS > ~/.ssh/id_rsa
+    - chmod 0600 ~/.ssh/id_rsa
     - ssh -p $SSH_PORT $BOT_HOST $CMD_PATH
