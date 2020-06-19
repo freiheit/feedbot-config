@@ -1,1 +1,6 @@
-# Do stuff here
+image: busybox:latest
+
+deploy1:
+  stage: deploy
+  script:
+    - ssh -i $SSH_KEY_DEBOTS -p $SSH_PORT $BOT_HOST $CMD_PATH
