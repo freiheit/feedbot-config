@@ -1,6 +1,8 @@
-image: busybox:latest
+image: alpine:latest
 
 deploy1:
   stage: deploy
   script:
+    - apk update
+    - apk add openssh
     - ssh -i $SSH_KEY_DEBOTS -p $SSH_PORT $BOT_HOST $CMD_PATH
