@@ -5,7 +5,7 @@ deploy1:
   script:
     - apk update
     - apk add openssh
-    - mkdir .ssh
-    - ssh-keyscan -p $SSH_PORT $BOT_HOST > .ssh/known_hosts
-    - echo $SSH_KEY_DEBOTS > .ssh/id_rsa
+    - mkdir ~/.ssh
+    - ssh-keyscan -p $SSH_PORT $BOT_HOST > ~/.ssh/known_hosts
+    - echo $SSH_KEY_DEBOTS > ~/.ssh/id_rsa
     - ssh -p $SSH_PORT $BOT_HOST $CMD_PATH
