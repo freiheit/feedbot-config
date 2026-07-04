@@ -1,2 +1,5 @@
 DEADJOE
 *~
+*.py
+*.sh
+.venv
